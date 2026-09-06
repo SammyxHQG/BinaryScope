@@ -8,7 +8,7 @@ workspace.
 Analyzed files are opened as data snapshots. BinaryScope does not load them as
 modules, start processes from them, or execute their code.
 
-![BinaryScope welcome screen](docs/screenshots/welcome.png)
+![BinaryScope title screen](docs/screenshots/Logo.png)
 
 > Screenshot placeholder for future releases: add a representative overview and
 > disassembly capture here. Development captures are in `docs/screenshots/`.
