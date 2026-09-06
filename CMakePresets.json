@@ -1,0 +1,29 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "windows",
+      "displayName": "Windows x64 (MSVC)",
+      "generator": "Visual Studio 18 2026",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": { "CMAKE_PREFIX_PATH": "$env{QT_ROOT}", "BUILD_TESTING": "ON" }
+    },
+    {
+      "name": "core-only",
+      "displayName": "Parser and analysis tests (no Qt)",
+      "generator": "Visual Studio 18 2026",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/build-core",
+      "cacheVariables": { "BINARYSCOPE_BUILD_UI": "OFF", "BINARYSCOPE_WITH_CAPSTONE": "OFF", "BUILD_TESTING": "ON" }
+    }
+  ],
+  "buildPresets": [
+    { "name": "windows", "configurePreset": "windows", "configuration": "Release" },
+    { "name": "core-only", "configurePreset": "core-only", "configuration": "Release" }
+  ],
+  "testPresets": [
+    { "name": "windows", "configurePreset": "windows", "configuration": "Release", "output": { "outputOnFailure": true } },
+    { "name": "core-only", "configurePreset": "core-only", "configuration": "Release", "output": { "outputOnFailure": true } }
+  ]
+}
